@@ -12,7 +12,12 @@ def func_string_formatter_convert_int_to_string(string, num):
 
 def fun_string_formatter_3(string, num):
     return "string value: %(string)s, number value: %(num)x" % {"string": string, "num": num }
-
+#--------------------------------------------------------------#
+#strings, which are immutable,
+#this will cast error
+st="some string"
+st[0]="S"
+print(st)
 if __name__ == "__main__":
     print(func_string_formatter_old_style('some value'))
 

@@ -55,6 +55,15 @@ def func_arg_as_array(*args):
     print(f'from func_array_dic_as_*args: {args}')
 def func_arg_as_dic(**args):
     print(f'from func_array_dic_as_**args: {args}')
+#--------------------------------------------------------------
+#function argument passing types'
+#positional passing 
+def positional_passing(pos1, pos2, /):
+    print( pos1 + pos2)
+def keyWord_passing(*,kwd1,kwd2):   
+    print(kwd1+kwd2)
+def standard_passing(arg):
+    print(arg)
 if __name__ == "__main__":
     #print from static method
     KeyWord.static_func_print()
@@ -78,5 +87,15 @@ if __name__ == "__main__":
     func_arg_as_array(['a','b'],"val1", {'key':'val'})
     #takes args in form of dic key=value
     func_arg_as_dic(key1=["a","b"],key2={"key":"val"}, key3="val3")
+    #-------------------------------------------------------------------------
+    #position only
+    #positional_passing(pos1="pos1", pos2="pos2")-> will cast error
+    positional_passing("position_", "passing")
 
+    #keyword only
+    #keyWord_passing("first", "second")-> will cast error
+    keyWord_passing(kwd1="keyword_", kwd2="Passing")
+    #standard passing
+    standard_passing("standard_passing")
+    standard_passing(arg="standard_passing")
     
